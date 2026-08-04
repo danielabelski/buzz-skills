@@ -8,12 +8,15 @@ A small, portable collection of [Hermes Agent](https://hermes-agent.nousresearch
 | --- | --- |
 | [`hermes-in-buzz`](./hermes-in-buzz/) | End-to-end setup and troubleshooting for a dedicated Hermes Agent running as a native Buzz messaging agent. Covers relay connectivity, a separate Nostr identity, owner-only access controls, Buzz CLI installation, NIP-OA attestation, gateway configuration, and live inbound/outbound verification. |
 | [`buzz-media-attachments`](./buzz-media-attachments/) | Sends local media files to the active Buzz conversation through the native `buzz messages send --file` flow when generic `MEDIA:/path` delivery is unavailable or unreliable. Includes MP4 fast-start and canonical sanitization workflows plus GIF fallback. |
+| [`buzz-self-hosting`](./buzz-self-hosting/) | Guides an agent helping a user stand up and debug a self-hosted Buzz relay via the `deploy/compose` stack. Covers env/secrets setup, closed-relay membership, the loopback-hostname 404 footgun (`localhost` vs `127.0.0.1`), community re-keying and stale desktop state, layer-by-layer agent-response debugging, Windows/Git Bash pitfalls, admin surfaces, backups, and hosted→self-hosted migration limits. |
 
 ## Repository layout
 
 ```text
 buzz-skills/
 ├── buzz-media-attachments/
+│   └── SKILL.md
+├── buzz-self-hosting/
 │   └── SKILL.md
 └── hermes-in-buzz/
     ├── SKILL.md
@@ -32,7 +35,7 @@ Copy one or both skill directories into the active Hermes profile's skills direc
 
 ```bash
 # Default Hermes home
-cp -R hermes-in-buzz buzz-media-attachments ~/.hermes/skills/
+cp -R hermes-in-buzz buzz-media-attachments buzz-self-hosting ~/.hermes/skills/
 ```
 
 On Windows, the equivalent default destination is:
