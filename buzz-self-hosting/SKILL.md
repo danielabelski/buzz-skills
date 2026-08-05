@@ -1,6 +1,6 @@
 ---
 name: buzz-self-hosting
-description: "Use when helping a user set up, debug, or operate a self-hosted Buzz relay (Docker Compose path). Covers setup steps, verification at each layer, and known footguns."
+description: "Use when helping a user set up, debug, or operate a self-hosted Buzz relay through Docker Compose. Do not use for general Docker questions or non-Buzz Nostr deployments."
 version: 1.0.0
 metadata:
   hermes:

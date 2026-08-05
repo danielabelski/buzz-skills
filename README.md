@@ -31,7 +31,35 @@ buzz-skills/
 
 ## Install
 
-Copy one or both skill directories into the active Hermes profile's skills directory, preserving all nested files:
+### Maintained checkout
+
+To keep a checkout updateable with `git pull` instead of copying a snapshot,
+clone the repository and register its absolute path as a Hermes external skill
+directory:
+
+```bash
+git clone https://github.com/tonbistudio/buzz-skills.git
+```
+
+```yaml
+# ~/.hermes/config.yaml
+skills:
+  external_dirs:
+    - /absolute/path/to/buzz-skills
+```
+
+On Windows, use an absolute path such as `C:/Users/you/src/buzz-skills` in the
+YAML file. Restart Hermes after changing its configuration. External skill
+directories are discoverable alongside `~/.hermes/skills/`; a local skill with
+the same name takes precedence.
+
+An external directory is not a write-protection boundary: Hermes can modify a
+skill in place when the directory is writable. Use filesystem permissions if
+the checkout must be read-only, and update it through a trusted Git workflow.
+
+### Copied install
+
+Copy the skill directories you want into the active Hermes profile's skills directory, preserving all nested files:
 
 ```bash
 # Default Hermes home
@@ -50,7 +78,7 @@ For a Git-based install:
 
 ```bash
 git clone https://github.com/tonbistudio/buzz-skills.git
-cp -R buzz-skills/hermes-in-buzz buzz-skills/buzz-media-attachments ~/.hermes/skills/
+cp -R buzz-skills/hermes-in-buzz buzz-skills/buzz-media-attachments buzz-skills/buzz-self-hosting ~/.hermes/skills/
 ```
 
 ## Usage
@@ -113,4 +141,4 @@ Before setting up a gateway, consult the current Hermes and Buzz documentation. 
 
 ## License
 
-The `hermes-in-buzz` skill metadata declares the MIT license. Unless a separate license file is added, verify licensing expectations before redistributing the repository as a whole.
+Released under the [MIT License](./LICENSE).

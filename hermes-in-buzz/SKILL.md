@@ -1,6 +1,6 @@
 ---
 name: hermes-in-buzz
-description: Use when connecting remote Hermes to Buzz end-to-end.
+description: Use when connecting a remote Hermes gateway to Buzz end-to-end. Do not use for a Buzz-managed ACP runtime; use the official buzz-acp relay-bridge guide instead.
 version: 1.0.0
 author: Hermes Agent
 license: MIT

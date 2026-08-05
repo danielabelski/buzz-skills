@@ -1,6 +1,6 @@
 ---
 name: buzz-media-attachments
-description: "Use when attaching local media files to a Buzz chat."
+description: "Use when attaching a local media file to the active Buzz conversation. Do not use for general media editing or non-Buzz delivery."
 version: 1.0.0
 metadata:
   hermes:
